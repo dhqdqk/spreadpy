@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+def findall(s, sub, start=0):
+    '''
+    to find all indexes that sub in string s.
+    :param s: the input string
+    :param sub: the sub_string to find
+    :param start: the first index in s
+    :return: the list of all index that sub_string in s
+    '''
+    index = []
+    while True:
+        i = s.find(sub, start)
+        if i == -1:
+            break
+        index.append(i)
+        start = i + 1
+    return index
+
+if __name__ == "__main__":
+    # findall
+    s = 'foobarfoomanlsdofoo'
+    sub = 'foo'
+    print findall(s, sub)
